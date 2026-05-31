@@ -26,12 +26,13 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
+      lang="fa"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      dir="rtl"
     >
-      <body className="h-full dir-rtl">
-        <div className="relative flex flex-col h-full bg-gray-200 font-sans ">
-          <main className="relative flex-1 w-full max-w-3xl mx-auto px-16 pt-32 pb-20 bg-black text-white sm:items-start">
+      <body className="h-full">
+        <div className="relative flex flex-col h-full bg-gray-200 font-['BNAZANIN']">
+          <main className="relative flex-1 w-full max-w-3xl mx-auto p-5 bg-black text-white sm:items-start">
             {children}
           </main>
           <BottomNavigation />
