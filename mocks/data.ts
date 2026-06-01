@@ -1,4 +1,4 @@
-import { Post, Story } from "@/lib/type";
+import { Post, Story } from "@/types";
 
 export const stories: Story[] = [
   { id: 1, name: "تینا", image: "/images/temp.jpeg" },
@@ -13,7 +13,8 @@ export const posts: Post[] = [
     author: "مدیر باشگاه",
     time: "۲ ساعت پیش",
     content: "باشگاه تا اطلاع ثانوی تعطیل می‌باشد",
-    caption: "دوستانی که شهریه پرداخت کرده‌اند می‌توانند با مراجعه به تمام شعب ما مبلغ مورد نظر خود را دریافت کنند",
+    caption:
+      "دوستانی که شهریه پرداخت کرده‌اند می‌توانند با مراجعه به تمام شعب ما مبلغ مورد نظر خود را دریافت کنند",
     likes: 12,
     isLiked: false,
   },

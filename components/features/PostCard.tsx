@@ -2,7 +2,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { IconHeart, IconHeartFilled, IconShare } from "@tabler/icons-react";
-import { Post } from "@/lib/type";
+import { Post } from "@/types";
 
 interface PostCardProps {
   post: Post;

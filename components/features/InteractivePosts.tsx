@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Post } from "@/lib/type";
+import { Post } from "@/types";
 import { PostCard } from "./PostCard";
 
 interface InteractivePostsProps {
