@@ -2,13 +2,14 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { IconHeart, IconHeartFilled, IconShare } from "@tabler/icons-react";
-import { Post } from "../../lib/type";
+import { Post } from "@/lib/type";
+
 interface PostCardProps {
   post: Post;
   onLike: (id: number) => void;
 }
 
-export const PostCard = ({ post, onLike }:PostCardProps) => (
+export const PostCard = ({ post, onLike }: PostCardProps) => (
   <Card className="bg-[#141416] border-zinc-800 rounded-3xl my-4">
     <CardContent className="p-5">
       <div className="flex justify-between items-center mb-3">
@@ -19,15 +20,11 @@ export const PostCard = ({ post, onLike }:PostCardProps) => (
             </AvatarFallback>
           </Avatar>
           <div>
-            <div className="font-semibold text-white text-sm">
-              {post.author}
-            </div>
+            <div className="font-semibold text-white text-sm">{post.author}</div>
             <div className="text-zinc-500 text-xs">{post.time}</div>
           </div>
         </div>
-        <Badge variant="secondary" className="text-xs">
-          ادمین
-        </Badge>
+        <Badge variant="secondary" className="text-xs">ادمین</Badge>
       </div>
 
       <div className="bg-[#1e1025] rounded-2xl min-h-[120px] flex items-center justify-center p-6 text-center text-white text-sm my-3">
@@ -44,17 +41,9 @@ export const PostCard = ({ post, onLike }:PostCardProps) => (
           </button>
           <button
             onClick={() => onLike(post.id)}
-            className={
-              post.isLiked
-                ? "text-red-500"
-                : "text-zinc-400 hover:text-red-500 transition-colors"
-            }
+            className={post.isLiked ? "text-red-800" : "text-zinc-400 hover:text-red-800 transition-colors"}
           >
-            {post.isLiked ? (
-              <IconHeartFilled size={18} />
-            ) : (
-              <IconHeart size={18} />
-            )}
+            {post.isLiked ? <IconHeartFilled size={18} /> : <IconHeart size={18} />}
           </button>
         </div>
       </div>
