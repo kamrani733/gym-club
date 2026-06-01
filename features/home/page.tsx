@@ -1,6 +1,6 @@
 import { IconBell, IconPlus } from "@tabler/icons-react";
 import Image from "next/image";
-import InteractivePosts from "@/components/features/InteractivePosts";
+import InteractivePosts from "@/features/home/InteractivePosts";
 import { posts, stories } from "@/mocks/data";
 
 export default function HomePage() {
