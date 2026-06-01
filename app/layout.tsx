@@ -31,7 +31,7 @@ export default function RootLayout({
       dir="rtl"
     >
       <body className="h-full">
-        <div className="relative flex flex-col h-full bg-gray-200 font-['BNAZANIN']">
+        <div className="relative flex flex-col h-full bg-gray-200 font-['Vazirmatn']">
           <main className="relative flex-1 w-full max-w-3xl mx-auto p-5 bg-black text-white sm:items-start">
             {children}
           </main>

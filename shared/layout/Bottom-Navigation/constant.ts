@@ -1,14 +1,19 @@
-import { HiHome, HiOutlineSearch, HiOutlineUser } from "react-icons/hi";
-import { IoNotificationsOutline, IoSettingsOutline } from "react-icons/io5";
+import {
+  IconHome,
+  IconBell,
+  IconSearch,
+  IconSettings,
+  IconUser,
+} from "@tabler/icons-react";
 
 export const navItems = [
-  { href: "/profile", label: "Profile", icon: HiOutlineUser },
-  { href: "/search", label: "Search", icon: HiOutlineSearch },
-  { href: "/", label: "Home", icon: HiHome, isPrimary: true },
+  { href: "/profile", label: "Profile", icon: IconUser },
+  { href: "/search", label: "Search", icon: IconSearch },
+  { href: "/", label: "Home", icon: IconHome, isPrimary: true },
   {
     href: "/notifications",
     label: "Notifications",
-    icon: IoNotificationsOutline,
+    icon: IconBell,
   },
-  { href: "/setting", label: "Setting", icon: IoSettingsOutline },
+  { href: "/setting", label: "Setting", icon: IconSettings },
 ];
