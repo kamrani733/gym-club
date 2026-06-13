@@ -32,7 +32,7 @@ export default function RootLayout({
     >
       <body className="h-full">
         <div className="relative flex flex-col h-full bg-gray-200 font-['Vazirmatn']">
-          <main className=" flex-1 overflow-hidden   px-5 pt-5  relative   w-full max-w-3xl mx-auto bg-black text-white sm:items-start">
+          <main className="flex-1 overflow-y-auto px-5 pt-5 pb-20 relative w-full max-w-3xl mx-auto bg-black text-white">
             {children}
           </main>
           <BottomNavigation />

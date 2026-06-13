@@ -3,7 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 import { Card } from "@/shared/ui/card";
 import { SettingsIcon } from "lucide-react";
-import { workouts } from "./mocks";
+import { gymRecords, workouts } from "./mocks";
 export default function profilePage() {
   return (
     <>
@@ -51,12 +51,6 @@ export default function profilePage() {
         </Avatar>
       </div>
       <div className="mt-6">
-        <h3 className="text-lg font-semibold"> تمرین های روز</h3>
-        درصد پیشرفت شما در تمرین های روزانه
-        <Progress value={33} />
-        <div className="mt-2 text-sm text-gray-500">
-          شما ۳۳ درصد از تمرین های روزانه خود را انجام داده اید
-        </div>
         <div className="relative">
           <div className="absolute right-0 top-0 h-full w-12 bg-linear-to-l from-background to-transparent z-10 pointer-events-none" />
 
@@ -82,8 +76,10 @@ export default function profilePage() {
           </div>
         </div>
       </div>
-      <div>
-        <h3 className="text-lg  font-semibold my-6"> رکورد های شخصی</h3>
+      <div className="my-6">
+        <h3 className="text-lg  font-semibold "> رکورد های شخصی</h3>
+        <p className="text-stone-500">رکورد های شخصی شما براساس یک ماه گذشته</p>
+
         <div className="mt-4 flex items-center gap-4">
           <Card className="flex w-full flex-col items-center">
             <span className="text-3xl font-semibold">۱۲۰</span>
@@ -100,6 +96,43 @@ export default function profilePage() {
             <span>kg</span>
             <span>پا</span>
           </Card>
+        </div>
+      </div>
+      <div className="my-6">
+        <h3 className="text-lg  font-semibold"> رکورد های باشگاهی</h3>
+        <p className="text-stone-500">رکورد های باشگاهی براساس یک ماه گذشته</p>
+        <div className="mt-4 overflow-x-auto flex gap-4">
+          {gymRecords.map((record) => {
+            return (
+              <Card
+                key={record.id}
+                className="flex relative w-40 h-40  shrink-0 items-center justify-between p-4 mt-4"
+              >
+                <div className="flex items-center gap-4">
+                  <Badge className="absolute top-0 -right-1">{record.id}</Badge>
+                  <Avatar className="h-10 w-10">
+                    <AvatarImage src={record.avatar} />
+                    <AvatarFallback>CN</AvatarFallback>
+                  </Avatar>
+                  <div className="flex flex-col">
+                    <span className="font-semibold">{record.holder}</span>
+                    <span className="text-sm text-gray-500">
+                      {record.exercise}
+                    </span>
+                  </div>
+                </div>
+                <div className="flex flex-col items-end">
+                  <span className="text-lg font-semibold">
+                    {record.weight} kg
+                  </span>
+                  <Progress
+                    value={(record.weight / 200) * 100}
+                    className="w-24 mt-1"
+                  />
+                </div>
+              </Card>
+            );
+          })}
         </div>
       </div>
     </>
