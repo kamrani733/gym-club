@@ -3,7 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 import { Card } from "@/shared/ui/card";
 import { SettingsIcon } from "lucide-react";
-import { gymRecords, workouts } from "./mocks";
+import { gymRecords, personalRecords, workouts } from "./mocks";
 export default function profilePage() {
   return (
     <>
@@ -81,21 +81,23 @@ export default function profilePage() {
         <p className="text-stone-500">رکورد های شخصی شما براساس یک ماه گذشته</p>
 
         <div className="mt-4 flex items-center gap-4">
-          <Card className="flex w-full flex-col items-center">
-            <span className="text-3xl font-semibold">۱۲۰</span>
-            <span>kg</span>
-            <span>سینه</span>
-          </Card>
-          <Card className="flex w-full flex-col items-center">
-            <span className="text-3xl font-semibold">۱۵۰</span>
-            <span>kg</span>
-            <span>پشت</span>
-          </Card>
-          <Card className="flex w-full flex-col items-center">
-            <span className="text-3xl font-semibold">۱۰۰</span>
-            <span>kg</span>
-            <span>پا</span>
-          </Card>
+          {personalRecords.map((record) => {
+            return (
+              <Card
+                key={record.id}
+                className="flex relative w-40 h-20  shrink-0 items-center justify-between  p-4 mt-4"
+              >
+                <div className="flex items-center gap-4">
+                  <div className="flex flex-col">
+                    <span className="text-lg text-gray-500">
+                      {record.exercise}
+                    </span>
+                  </div>
+                </div>
+                {record.weight} kg
+              </Card>
+            );
+          })}
         </div>
       </div>
       <div className="my-6">
