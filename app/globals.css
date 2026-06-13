@@ -3,59 +3,56 @@
 @import "shadcn/tailwind.css";
 
 @custom-variant dark (&:is(.dark *));
+
 :root {
-  /* #0a0a0b */ /* #f4f4f5 */
-  --card: oklch(1 0 0); /* #141416 */
-  --primary: oklch(0.205 0 0); /* #a855f7 بنفش */
-  --muted: oklch(0.97 0 0); /* #28282c */
-  --muted-foreground: oklch(0.556 0 0);
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.87 0 0);
-  --chart-2: oklch(0.556 0 0);
-  --chart-3: oklch(0.439 0 0);
-  --chart-4: oklch(0.371 0 0);
-  --chart-5: oklch(0.269 0 0);
-  --radius: 0.625rem;
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  /* Dark / Light backgrounds */
+  --background: #0a0a0b;
+  --foreground: #f4f4f5;
+
+  /* Card */
+  --card: #141416;
+  --card-foreground: #f4f4f5;
+
+  /* Primary - Purple */
+  --primary: #a855f7;
+  --primary-foreground: #ffffff;
+
+  /* Secondary - Dark Purple */
+  --secondary: #22162e;
+  --secondary-foreground: #f4f4f5;
+
+  /* Accent - Amber/Orange */
+  --accent: #f59e0b;
+  --accent-foreground: #1c1c1e;
+
+  /* Success - Green */
+  --success: #22c55e;
+  --success-foreground: #ffffff;
+
+  /* Muted */
+  --muted: #2a2a2e;
+  --muted-foreground: #8e8e93;
+
+  /* Destructive / Error */
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+
+  /* Border & Input */
+  --border: #3a3a40;
+  --input: #3a3a40;
+  --ring: #a855f7;
+
+  /* Popover */
+  --popover: #141416;
+  --popover-foreground: #f4f4f5;
 }
+
 @font-face {
   font-family: "Vazirmatn";
   src: url("/fonts/Vazirmatn.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
-}
-
-@font-face {
-  font-family: "Vazirmatn";
-  src: url("/fonts/Vazirmatn.ttf") format("truetype");
-  font-weight: bold;
-  font-style: normal;
-  font-display: swap;
-}
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
 }
 
 @theme inline {
@@ -77,6 +74,8 @@
   --color-chart-3: var(--chart-3);
   --color-chart-2: var(--chart-2);
   --color-chart-1: var(--chart-1);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
   --color-ring: var(--ring);
   --color-input: var(--input);
   --color-border: var(--border);
@@ -93,6 +92,7 @@
   --color-popover: var(--popover);
   --color-card-foreground: var(--card-foreground);
   --color-card: var(--card);
+  --radius: 0.625rem;
   --radius-sm: calc(var(--radius) * 0.6);
   --radius-md: calc(var(--radius) * 0.8);
   --radius-lg: var(--radius);
@@ -103,45 +103,12 @@
 }
 
 body {
-  font-family: "IranianSans", "Geist", "Geist Mono", system-ui, sans-serif;
+  font-family:
+    "Vazirmatn", "IranianSans", "Geist", "Geist Mono", system-ui, sans-serif;
 }
 
 .rtl {
   direction: rtl;
-}
-
-.dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.87 0 0);
-  --chart-2: oklch(0.556 0 0);
-  --chart-3: oklch(0.439 0 0);
-  --chart-4: oklch(0.371 0 0);
-  --chart-5: oklch(0.269 0 0);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
 }
 
 @layer base {
@@ -156,9 +123,9 @@ body {
   }
 }
 
-/* scrollbar عمودی — برای پست‌ها */
+/* Scrollbar Styles */
 .overflow-y-auto::-webkit-scrollbar {
-  width: 1px;
+  width: 2px;
 }
 
 .overflow-y-auto::-webkit-scrollbar-track {
@@ -174,9 +141,8 @@ body {
   background: linear-gradient(to bottom, #322341, #4f46e5);
 }
 
-/* scrollbar افقی — برای استوری‌ها */
 .overflow-x-auto::-webkit-scrollbar {
-  height: 2px;
+  height: 1px;
 }
 
 .overflow-x-auto::-webkit-scrollbar-track {
@@ -189,19 +155,8 @@ body {
 }
 
 /* Firefox */
-.overflow-y-auto {
-  scrollbar-width: thin;
-  scrollbar-color: #2e2d2f transparent;
-}
-
+.overflow-y-auto,
 .overflow-x-auto {
   scrollbar-width: thin;
   scrollbar-color: #2e2d2f transparent;
-}
-.overflow-y-auto::-webkit-scrollbar {
-  width: 2px;  
-}
-
-.overflow-x-auto::-webkit-scrollbar {
-  height: 1px;
 }
